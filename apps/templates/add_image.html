@@ -1,0 +1,28 @@
+<div class="container">
+
+
+  <form action="{% url 'addimage' id=0%}" method="post">{% csrf_token %}
+    <div class="form-group">
+      <label for="usr">Add image:</label>
+      <img src="/media/{{anil.jpg}}" alt="jai hind" width="500" height="600" name="img">
+        <input type="hidden" class="form-control" id="usr" name="id" value="{{categorys.id}}">
+    </div><br><br>
+    <button type="submit" class="btn btn-default">Submit</button><br><br>
+  </form>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>image list</th>
+      </tr>
+    </thead>
+    <tbody>
+     {% for img in images %}
+      <tr>
+        <td><img src="/media/{{each.image}}"> alt="jai hind" width="500" height="600" name="img"></td>
+
+
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>

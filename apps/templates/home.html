@@ -1,0 +1,12 @@
+<h1> Categories</h1>
+{% if students%}
+    {% for each in students %}
+        <a href="{% url 'apps:details' each.id %}">{{each.name}}</a><a href="{% url 'apps:delete' each.id %}"> delete</a><br>
+    {% endfor %}
+
+{% else %}
+ Please Create Category
+{% endif %}
+<br>
+
+<a href="/create_category/">Create Category</a>

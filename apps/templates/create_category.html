@@ -1,0 +1,9 @@
+{% if error %}
+<b>{{error}}</b><br>
+<h1>hi</h1>
+{% endif %}
+<form action="{% url 'apps:save_category' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Save">
+</form>
